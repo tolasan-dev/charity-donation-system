@@ -11,7 +11,9 @@ namespace charity_system
         {
             InitializeComponent();
 
-           
+
         }
+
+       
     }
 }

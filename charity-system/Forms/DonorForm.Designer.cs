@@ -93,7 +93,7 @@ namespace charity_system.Forms
             guna2GradientPanel1.Location = new Point(0, 1);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges11;
-            guna2GradientPanel1.Size = new Size(272, 690);
+            guna2GradientPanel1.Size = new Size(272, 691);
             guna2GradientPanel1.TabIndex = 0;
             guna2GradientPanel1.Paint += guna2GradientPanel1_Paint;
             // 
@@ -150,7 +150,7 @@ namespace charity_system.Forms
             guna2Button2.HoverState.FillColor = Color.FromArgb(0, 146, 184);
             guna2Button2.Image = (Image)resources.GetObject("guna2Button2.Image");
             guna2Button2.ImageOffset = new Point(-10, 0);
-            guna2Button2.Location = new Point(23, 366);
+            guna2Button2.Location = new Point(23, 365);
             guna2Button2.Name = "guna2Button2";
             guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges5;
             guna2Button2.Size = new Size(225, 56);
@@ -172,7 +172,7 @@ namespace charity_system.Forms
             guna2Button1.HoverState.FillColor = Color.FromArgb(0, 146, 184);
             guna2Button1.Image = (Image)resources.GetObject("guna2Button1.Image");
             guna2Button1.ImageOffset = new Point(-5, 0);
-            guna2Button1.Location = new Point(23, 282);
+            guna2Button1.Location = new Point(23, 283);
             guna2Button1.Name = "guna2Button1";
             guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges7;
             guna2Button1.Size = new Size(225, 56);
@@ -194,7 +194,7 @@ namespace charity_system.Forms
             guna2Button5.HoverState.FillColor = Color.FromArgb(0, 192, 192);
             guna2Button5.Image = (Image)resources.GetObject("guna2Button5.Image");
             guna2Button5.ImageOffset = new Point(-10, 0);
-            guna2Button5.Location = new Point(23, 190);
+            guna2Button5.Location = new Point(23, 189);
             guna2Button5.Name = "guna2Button5";
             guna2Button5.ShadowDecoration.CustomizableEdges = customizableEdges9;
             guna2Button5.Size = new Size(225, 56);
@@ -228,7 +228,7 @@ namespace charity_system.Forms
             guna2ShadowPanel1.FillColor = Color.White;
             guna2ShadowPanel1.Location = new Point(295, 283);
             guna2ShadowPanel1.Name = "guna2ShadowPanel1";
-            guna2ShadowPanel1.Radius = 10;
+            guna2ShadowPanel1.Radius = 5;
             guna2ShadowPanel1.ShadowColor = Color.Black;
             guna2ShadowPanel1.Size = new Size(904, 408);
             guna2ShadowPanel1.TabIndex = 4;
@@ -373,9 +373,9 @@ namespace charity_system.Forms
             // 
             guna2ShadowPanel3.BackColor = Color.Transparent;
             guna2ShadowPanel3.FillColor = Color.FromArgb(192, 192, 255);
-            guna2ShadowPanel3.Location = new Point(295, 106);
+            guna2ShadowPanel3.Location = new Point(295, 107);
             guna2ShadowPanel3.Name = "guna2ShadowPanel3";
-            guna2ShadowPanel3.Radius = 10;
+            guna2ShadowPanel3.Radius = 5;
             guna2ShadowPanel3.ShadowColor = Color.Black;
             guna2ShadowPanel3.Size = new Size(282, 125);
             guna2ShadowPanel3.TabIndex = 8;
@@ -384,11 +384,11 @@ namespace charity_system.Forms
             // 
             guna2ShadowPanel4.BackColor = Color.Transparent;
             guna2ShadowPanel4.FillColor = Color.FromArgb(192, 255, 255);
-            guna2ShadowPanel4.Location = new Point(608, 106);
+            guna2ShadowPanel4.Location = new Point(608, 107);
             guna2ShadowPanel4.Name = "guna2ShadowPanel4";
-            guna2ShadowPanel4.Radius = 10;
+            guna2ShadowPanel4.Radius = 5;
             guna2ShadowPanel4.ShadowColor = Color.Black;
-            guna2ShadowPanel4.Size = new Size(276, 125);
+            guna2ShadowPanel4.Size = new Size(277, 125);
             guna2ShadowPanel4.TabIndex = 9;
             guna2ShadowPanel4.Paint += guna2ShadowPanel4_Paint;
             // 
@@ -396,9 +396,9 @@ namespace charity_system.Forms
             // 
             guna2ShadowPanel5.BackColor = Color.Transparent;
             guna2ShadowPanel5.FillColor = Color.FromArgb(255, 192, 128);
-            guna2ShadowPanel5.Location = new Point(923, 106);
+            guna2ShadowPanel5.Location = new Point(923, 107);
             guna2ShadowPanel5.Name = "guna2ShadowPanel5";
-            guna2ShadowPanel5.Radius = 10;
+            guna2ShadowPanel5.Radius = 5;
             guna2ShadowPanel5.ShadowColor = Color.Black;
             guna2ShadowPanel5.Size = new Size(261, 125);
             guna2ShadowPanel5.TabIndex = 10;
@@ -408,7 +408,7 @@ namespace charity_system.Forms
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1238, 692);
+            ClientSize = new Size(1238, 749);
             Controls.Add(guna2ShadowPanel5);
             Controls.Add(guna2ShadowPanel4);
             Controls.Add(guna2ShadowPanel3);
