@@ -73,6 +73,16 @@ namespace charity_system.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap banner_Sign_up1 {
+            get {
+                object obj = ResourceManager.GetObject("banner-Sign-up1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap heart_hand_symbol_logo_template_600nw_2566261387_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("heart-hand-symbol-logo-template-600nw-2566261387-removebg-preview", resourceCulture);
