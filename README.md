@@ -129,7 +129,7 @@ Generates summaries and statistics for campaigns.
 - **Admin → Report**: Admin can generate multiple reports.
 
 
-###-- Database: CharityManagementSystem
+## Database: CharityManagementSystem
 
 ```
  -- Table: Users
