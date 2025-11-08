@@ -14,8 +14,8 @@ namespace charity_system.Forms
 
 
     public partial class DonorForm : Form
-    { 
-      
+    {
+
         public DonorForm()
         {
             InitializeComponent();
@@ -81,6 +81,27 @@ namespace charity_system.Forms
                 MessageBox.Show("Login canceled.");
             }
         }
+
+        private void guna2CirclePictureBox1_Click_1(object sender, EventArgs e)
+        {
+            Border.borderradius(guna2CirclePictureBox1, 50);
+
+        }
+
+        //private void panel1_Paint(object sender, PaintEventArgs e)
+        //{
+        //    //Border.borderradius(panel1, 30);
+        //}
+
+        private void DonorForm_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void guna2HtmlLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
-   }
+}
 

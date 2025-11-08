@@ -28,18 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             SuspendLayout();
+            // 
+            // guna2Panel1
+            // 
+            guna2Panel1.CustomizableEdges = customizableEdges1;
+            guna2Panel1.Location = new Point(1, 0);
+            guna2Panel1.Name = "guna2Panel1";
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2Panel1.Size = new Size(250, 125);
+            guna2Panel1.TabIndex = 0;
             // 
             // AdminDashboard_Form
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1101, 450);
+            Controls.Add(guna2Panel1);
             Name = "AdminDashboard_Form";
             Text = "AdminDashboard_Form";
             ResumeLayout(false);
         }
 
         #endregion
+
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
     }
 }
