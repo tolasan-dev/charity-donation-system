@@ -8,5 +8,8 @@ namespace charity_system
 {
     internal class TestAddNewClass
     {
+
+
+        private string testField;
     }
 }
