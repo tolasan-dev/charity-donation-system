@@ -183,9 +183,44 @@ CREATE TABLE Reports (
     FOREIGN KEY (admin_id) REFERENCES Users(user_id) ON DELETE CASCADE
 ); ```
 
+
+
+
+# Charity Management System
+
+A full-featured **OOP-based Charity Management System** built with PHP/MySQL. Donors contribute to campaigns, Admins manage everything, and payments are securely tracked.
+
+## UML Class Diagram
+![Charity Management System - UML Class Diagram](https://www.plantuml.com/plantuml/png/
+markdown<div align="center">
+
+# <span style="color:#00D4AA; font-weight:bold;">Charity Management System</span> 🌟
+
+<span style="color:#FF6B6B; font-size:1.2em;">A powerful, secure & user-friendly platform to connect donors with life-changing causes</span>
+
+[![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://mysql.com)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
+[![OOP](https://img.shields.io/badge/OOP-Ready-blueviolet?style=for-the-badge)](#)
+
+</div>
+
+## <span style="color:#4ECDC4;">🎯 Project Overview</span>
+
+<span style="color:#FFE66D; background:#2A2A72; padding:5px 10px; border-radius:8px;">Empower generosity</span> – This **Charity Management System** allows donors to support meaningful campaigns while administrators efficiently manage funds, users, and transparency.
+
+### <span style="color:#FF6B6B;">✨ Key Features</span>
+
+- <span style="color:#95E1D3;">Donor Registration & Secure Login</span>  
+- <span style="color:#F38181;">Create & Browse Charity Campaigns</span>  
+- <span style="color:#FCE38A;">Real-time Donation Tracking</span>  
+- <span style="color:#EAFFD0;">Admin Dashboard with Full Control</span>  
+- <span style="color:#A0FFE6;">Payment History & Reports</span>  
+- <span style="color:#C1FFD7;">Responsive Design (Mobile-Friendly)</span>
+
+## <span style="color:#FFD93D;">🖼️ UML Class Diagram</span>
 ## Notes
 - `Campaign.status` and `Payment.status` use enumerations for type safety.
 - Methods and attributes illustrate main operations and can be extended in implementation.
-- This UML serves as a blueprint for implementing the Charity Management System in OOP languages like C#, Java, or PHP.
+- This UML serves as a blueprint for implementing the Charity Management System in OOP languages like C#,  PHP.
 
 
