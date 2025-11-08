@@ -75,11 +75,7 @@ namespace charity_system.Forms
                 // Example: Login successful, proceed to main form or next action
                 MessageBox.Show("Login successful!");
             }
-            else
-            {
-                // Example: User canceled or closed the form
-                MessageBox.Show("Login canceled.");
-            }
+            
         }
 
         private void guna2CirclePictureBox1_Click_1(object sender, EventArgs e)
