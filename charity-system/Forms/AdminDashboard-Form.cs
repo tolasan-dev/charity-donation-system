@@ -38,7 +38,10 @@ namespace charity_system.Forms
         private void btnExit_Click(object sender, EventArgs e)
         {
 
-           AdminDashboard_Form.ActiveForm.Close();
+            //AdminDashboard_Form.ActiveForm.Close(); 
+
+             DonorForm donorForm = new DonorForm();
+             donorForm.Show();
         }
 
         private void AdminDashboard_Form_Load(object sender, EventArgs e)

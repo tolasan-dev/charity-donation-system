@@ -75,7 +75,7 @@ namespace charity_system.Forms
                 // Example: Login successful, proceed to main form or next action
                 MessageBox.Show("Login successful!");
             }
-            
+
         }
 
         private void guna2CirclePictureBox1_Click_1(object sender, EventArgs e)
@@ -95,6 +95,11 @@ namespace charity_system.Forms
         }
 
         private void guna2HtmlLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel5_Click(object sender, EventArgs e)
         {
 
         }
