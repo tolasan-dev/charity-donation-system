@@ -128,6 +128,64 @@ Generates summaries and statistics for campaigns.
 - **Admin → Campaign**: Admin can manage multiple campaigns.
 - **Admin → Report**: Admin can generate multiple reports.
 
+
+###-- Database: CharityManagementSystem
+
+-- Table: Users
+CREATE TABLE Users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    role ENUM('donor','admin') NOT NULL
+);
+
+-- Table: Campaigns
+CREATE TABLE Campaigns (
+    campaign_id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    goal_amount DECIMAL(10,2) NOT NULL,
+    current_amount DECIMAL(10,2) DEFAULT 0,
+    start_date DATE NOT NULL,
+    end_date DATE NOT NULL,
+    status ENUM('Active','Completed','Cancelled') NOT NULL,
+    admin_id INT NOT NULL,
+    FOREIGN KEY (admin_id) REFERENCES Users(user_id) ON DELETE CASCADE
+);
+
+-- Table: Donations
+CREATE TABLE Donations (
+    donation_id INT AUTO_INCREMENT PRIMARY KEY,
+    donor_id INT NOT NULL,
+    campaign_id INT NOT NULL,
+    amount DECIMAL(10,2) NOT NULL,
+    donation_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (donor_id) REFERENCES Users(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (campaign_id) REFERENCES Campaigns(campaign_id) ON DELETE CASCADE
+);
+
+-- Table: Payments
+CREATE TABLE Payments (
+    payment_id INT AUTO_INCREMENT PRIMARY KEY,
+    donation_id INT NOT NULL UNIQUE,
+    method VARCHAR(50) NOT NULL,
+    transaction_id VARCHAR(255) NOT NULL UNIQUE,
+    status ENUM('Pending','Completed','Failed') NOT NULL,
+    FOREIGN KEY (donation_id) REFERENCES Donations(donation_id) ON DELETE CASCADE
+);
+
+-- Table: Reports
+CREATE TABLE Reports (
+    report_id INT AUTO_INCREMENT PRIMARY KEY,
+    admin_id INT NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    generated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    content TEXT,
+    FOREIGN KEY (admin_id) REFERENCES Users(user_id) ON DELETE CASCADE
+);
+
+
 ## Notes
 - `Campaign.status` and `Payment.status` use enumerations for type safety.
 - Methods and attributes illustrate main operations and can be extended in implementation.
