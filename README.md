@@ -131,7 +131,8 @@ Generates summaries and statistics for campaigns.
 
 ###-- Database: CharityManagementSystem
 
--- Table: Users
+```
+ -- Table: Users
 CREATE TABLE Users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
@@ -185,7 +186,7 @@ CREATE TABLE Reports (
     FOREIGN KEY (admin_id) REFERENCES Users(user_id) ON DELETE CASCADE
 );
 
-
+```
 ## Notes
 - `Campaign.status` and `Payment.status` use enumerations for type safety.
 - Methods and attributes illustrate main operations and can be extended in implementation.
