@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace charity_system.Forms
 {
-    public partial class My_donation_Form : Form
+    public partial class My_Donation : Form
     {
-        public My_donation_Form()
+        public My_Donation()
         {
             InitializeComponent();
         }
