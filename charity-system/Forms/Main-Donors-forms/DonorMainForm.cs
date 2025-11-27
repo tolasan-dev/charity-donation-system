@@ -80,7 +80,7 @@ namespace charity_system.Forms
 
         private void guna2CirclePictureBox1_Click_1(object sender, EventArgs e)
         {
-            Border.borderradius(guna2CirclePictureBox1, 50);
+           
 
         }
 
