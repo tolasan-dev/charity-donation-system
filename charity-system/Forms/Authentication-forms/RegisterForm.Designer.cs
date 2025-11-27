@@ -62,7 +62,7 @@
             guna2Panel1.Location = new Point(3, 4);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Panel1.Size = new Size(427, 507);
+            guna2Panel1.Size = new Size(427, 521);
             guna2Panel1.TabIndex = 0;
             // 
             // guna2TextBox1
@@ -157,6 +157,7 @@
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button1.FillColor = Color.FromArgb(0, 192, 192);
             guna2Button1.Font = new Font("Segoe UI", 14F);
             guna2Button1.ForeColor = Color.White;
             guna2Button1.Location = new Point(486, 432);
