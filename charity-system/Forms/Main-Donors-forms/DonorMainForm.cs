@@ -1,4 +1,5 @@
-﻿using System;
+﻿using charity_system.Forms.Main_Donors_forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -80,7 +81,7 @@ namespace charity_system.Forms
 
         private void guna2CirclePictureBox1_Click_1(object sender, EventArgs e)
         {
-           
+
 
         }
 
@@ -101,6 +102,41 @@ namespace charity_system.Forms
 
         private void guna2HtmlLabel5_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Donation_now(object sender, EventArgs e)
+        {
+            this.Hide();  // hide parent first
+
+            DonateNowForm donateNowForm = new DonateNowForm();
+            donateNowForm.ShowDialog();  // open child as modal
+
+
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void Profile_btn(object sender, EventArgs e)
+        {
+            this.Hide();  // hide parent first
+            MyProfileForm myProfileForm = new MyProfileForm();
+            myProfileForm.ShowDialog();
+        }
+
+        private void MyDonation(object sender, EventArgs e)
+        {
+            this.Hide();
+            MyDonationsForm myDonationsForm = new MyDonationsForm();    
+            myDonationsForm.ShowDialog();
 
         }
     }

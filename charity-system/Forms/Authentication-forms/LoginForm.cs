@@ -26,11 +26,9 @@ namespace charity_system
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
-
-            // Show a test message
-            MessageBox.Show("Login Button Test - Starting Login...");
 
             // If empty inputs - quick test
             if (username == "" || password == "")
@@ -43,7 +41,7 @@ namespace charity_system
                      FROM [User]
                      WHERE UserName = @uname AND PasswordHash = @pass";
 
-            using (SqlConnection conn = new SqlConnection("your_connection_string_here"))
+            using (SqlConnection conn = new SqlConnection(DBConnection.ConnectionString))
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
                 cmd.Parameters.AddWithValue("@uname", username);
@@ -60,9 +58,7 @@ namespace charity_system
                         int roleID = dr.GetInt32(1);
                         int? donorID = dr.IsDBNull(2) ? (int?)null : dr.GetInt32(2);
 
-                        MessageBox.Show($"Login Success!\nUserID: {userID}\nRoleID: {roleID}");
-
-                        // Save to Global User
+                        //MessageBox.Show($"Login Success!\nUserID: {userID}\nRoleID: {roleID}");
                         CurrentUser.UserID = userID;
                         CurrentUser.RoleID = roleID;
                         CurrentUser.DonorID = donorID;
@@ -76,7 +72,7 @@ namespace charity_system
                         else if (roleID == 2)
                         {
                             MessageBox.Show("Redirecting to Donor Dashboard...");
-                            new DonorForm().Show();
+                            new DonorMainForm().Show();
                         }
 
                         this.Hide();
