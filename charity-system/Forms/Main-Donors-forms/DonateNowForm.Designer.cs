@@ -48,6 +48,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             btnExit = new Guna.UI2.WinForms.Guna2Button();
@@ -57,8 +59,7 @@
             guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
             guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            lblDonorEmail = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lbdonorProfile = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblDonorName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             lblSummaryTotal = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -72,9 +73,11 @@
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             cmbCampaign = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             btndonation = new Guna.UI2.WinForms.Guna2Button();
             guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            txtAmount = new Guna.UI2.WinForms.Guna2TextBox();
+            guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            cmbPaymentMethod = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2GradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox2).BeginInit();
             guna2ShadowPanel1.SuspendLayout();
@@ -245,8 +248,7 @@
             // guna2ShadowPanel1
             // 
             guna2ShadowPanel1.BackColor = Color.Transparent;
-            guna2ShadowPanel1.Controls.Add(guna2HtmlLabel3);
-            guna2ShadowPanel1.Controls.Add(lblDonorEmail);
+            guna2ShadowPanel1.Controls.Add(lbdonorProfile);
             guna2ShadowPanel1.Controls.Add(lblDonorName);
             guna2ShadowPanel1.FillColor = Color.White;
             guna2ShadowPanel1.Location = new Point(307, 101);
@@ -255,26 +257,16 @@
             guna2ShadowPanel1.ShadowColor = Color.Black;
             guna2ShadowPanel1.Size = new Size(353, 125);
             guna2ShadowPanel1.TabIndex = 4;
-            guna2ShadowPanel1.Paint += LoadDonorInfo;
             // 
-            // guna2HtmlLabel3
+            // lbdonorProfile
             // 
-            guna2HtmlLabel3.BackColor = Color.Transparent;
-            guna2HtmlLabel3.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel3.Location = new Point(34, 21);
-            guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            guna2HtmlLabel3.Size = new Size(162, 33);
-            guna2HtmlLabel3.TabIndex = 1;
-            guna2HtmlLabel3.Text = "lblDonorName";
-            // 
-            // lblDonorEmail
-            // 
-            lblDonorEmail.BackColor = Color.Transparent;
-            lblDonorEmail.Location = new Point(34, 67);
-            lblDonorEmail.Name = "lblDonorEmail";
-            lblDonorEmail.Size = new Size(99, 22);
-            lblDonorEmail.TabIndex = 0;
-            lblDonorEmail.Text = "lblDonorEmail";
+            lbdonorProfile.BackColor = Color.Transparent;
+            lbdonorProfile.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbdonorProfile.Location = new Point(34, 21);
+            lbdonorProfile.Name = "lbdonorProfile";
+            lbdonorProfile.Size = new Size(162, 33);
+            lbdonorProfile.TabIndex = 1;
+            lbdonorProfile.Text = "lblDonorName";
             // 
             // lblDonorName
             // 
@@ -302,13 +294,13 @@
             guna2ShadowPanel2.Name = "guna2ShadowPanel2";
             guna2ShadowPanel2.Radius = 5;
             guna2ShadowPanel2.ShadowColor = Color.Black;
-            guna2ShadowPanel2.Size = new Size(353, 277);
+            guna2ShadowPanel2.Size = new Size(432, 519);
             guna2ShadowPanel2.TabIndex = 5;
             // 
             // lblSummaryTotal
             // 
             lblSummaryTotal.BackColor = Color.Transparent;
-            lblSummaryTotal.Location = new Point(206, 219);
+            lblSummaryTotal.Location = new Point(231, 219);
             lblSummaryTotal.Name = "lblSummaryTotal";
             lblSummaryTotal.Size = new Size(121, 22);
             lblSummaryTotal.TabIndex = 10;
@@ -318,7 +310,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 10F);
-            label3.Location = new Point(22, 218);
+            label3.Location = new Point(47, 218);
             label3.Name = "label3";
             label3.Size = new Size(55, 23);
             label3.TabIndex = 9;
@@ -328,7 +320,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10F);
-            label2.Location = new Point(22, 166);
+            label2.Location = new Point(47, 166);
             label2.Name = "label2";
             label2.Size = new Size(141, 23);
             label2.TabIndex = 8;
@@ -338,7 +330,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 10F);
-            label1.Location = new Point(22, 116);
+            label1.Location = new Point(47, 116);
             label1.Name = "label1";
             label1.Size = new Size(72, 23);
             label1.TabIndex = 7;
@@ -348,7 +340,7 @@
             // 
             campaign.AutoSize = true;
             campaign.Font = new Font("Segoe UI", 10F);
-            campaign.Location = new Point(22, 61);
+            campaign.Location = new Point(47, 61);
             campaign.Name = "campaign";
             campaign.Size = new Size(85, 23);
             campaign.TabIndex = 6;
@@ -357,7 +349,7 @@
             // lblSummaryPaymentMethod
             // 
             lblSummaryPaymentMethod.BackColor = Color.Transparent;
-            lblSummaryPaymentMethod.Location = new Point(206, 167);
+            lblSummaryPaymentMethod.Location = new Point(231, 167);
             lblSummaryPaymentMethod.Name = "lblSummaryPaymentMethod";
             lblSummaryPaymentMethod.Size = new Size(121, 22);
             lblSummaryPaymentMethod.TabIndex = 5;
@@ -366,7 +358,7 @@
             // lblSummaryAmount
             // 
             lblSummaryAmount.BackColor = Color.Transparent;
-            lblSummaryAmount.Location = new Point(206, 116);
+            lblSummaryAmount.Location = new Point(231, 116);
             lblSummaryAmount.Name = "lblSummaryAmount";
             lblSummaryAmount.Size = new Size(121, 22);
             lblSummaryAmount.TabIndex = 4;
@@ -375,7 +367,7 @@
             // lblSummaryCampaign
             // 
             lblSummaryCampaign.BackColor = Color.Transparent;
-            lblSummaryCampaign.Location = new Point(206, 62);
+            lblSummaryCampaign.Location = new Point(231, 62);
             lblSummaryCampaign.Name = "lblSummaryCampaign";
             lblSummaryCampaign.Size = new Size(121, 22);
             lblSummaryCampaign.TabIndex = 3;
@@ -385,7 +377,7 @@
             // 
             guna2HtmlLabel2.BackColor = Color.Transparent;
             guna2HtmlLabel2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel2.Location = new Point(88, 13);
+            guna2HtmlLabel2.Location = new Point(113, 13);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             guna2HtmlLabel2.Size = new Size(179, 30);
             guna2HtmlLabel2.TabIndex = 2;
@@ -405,8 +397,9 @@
             cmbCampaign.Location = new Point(307, 299);
             cmbCampaign.Name = "cmbCampaign";
             cmbCampaign.ShadowDecoration.CustomizableEdges = customizableEdges15;
-            cmbCampaign.Size = new Size(175, 36);
+            cmbCampaign.Size = new Size(350, 36);
             cmbCampaign.TabIndex = 7;
+            cmbCampaign.SelectedIndexChanged += cmbCampaign_SelectedIndexChanged_1;
             // 
             // guna2HtmlLabel4
             // 
@@ -418,31 +411,10 @@
             guna2HtmlLabel4.TabIndex = 8;
             guna2HtmlLabel4.Text = "Campaign";
             // 
-            // guna2TextBox1
-            // 
-            guna2TextBox1.BorderRadius = 5;
-            guna2TextBox1.CustomizableEdges = customizableEdges16;
-            guna2TextBox1.DefaultText = "";
-            guna2TextBox1.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox1.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox1.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox1.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Font = new Font("Segoe UI", 9F);
-            guna2TextBox1.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Location = new Point(311, 549);
-            guna2TextBox1.Margin = new Padding(3, 4, 3, 4);
-            guna2TextBox1.Name = "guna2TextBox1";
-            guna2TextBox1.PlaceholderText = "";
-            guna2TextBox1.SelectedText = "";
-            guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges17;
-            guna2TextBox1.Size = new Size(171, 42);
-            guna2TextBox1.TabIndex = 9;
-            // 
             // btndonation
             // 
             btndonation.BorderRadius = 8;
-            btndonation.CustomizableEdges = customizableEdges18;
+            btndonation.CustomizableEdges = customizableEdges16;
             btndonation.DisabledState.BorderColor = Color.DarkGray;
             btndonation.DisabledState.CustomBorderColor = Color.DarkGray;
             btndonation.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -450,9 +422,9 @@
             btndonation.FillColor = Color.FromArgb(0, 192, 192);
             btndonation.Font = new Font("Segoe UI", 9F);
             btndonation.ForeColor = Color.White;
-            btndonation.Location = new Point(539, 614);
+            btndonation.Location = new Point(366, 564);
             btndonation.Name = "btndonation";
-            btndonation.ShadowDecoration.CustomizableEdges = customizableEdges19;
+            btndonation.ShadowDecoration.CustomizableEdges = customizableEdges17;
             btndonation.Size = new Size(225, 56);
             btndonation.TabIndex = 10;
             btndonation.Text = "Donation Now";
@@ -462,20 +434,71 @@
             // 
             guna2HtmlLabel5.BackColor = Color.Transparent;
             guna2HtmlLabel5.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel5.Location = new Point(311, 509);
+            guna2HtmlLabel5.Location = new Point(307, 366);
             guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             guna2HtmlLabel5.Size = new Size(86, 33);
             guna2HtmlLabel5.TabIndex = 11;
             guna2HtmlLabel5.Text = "Amount";
+            // 
+            // txtAmount
+            // 
+            txtAmount.CustomizableEdges = customizableEdges18;
+            txtAmount.DefaultText = "";
+            txtAmount.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtAmount.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtAmount.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtAmount.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtAmount.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtAmount.Font = new Font("Segoe UI", 9F);
+            txtAmount.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtAmount.Location = new Point(310, 403);
+            txtAmount.Margin = new Padding(3, 4, 3, 4);
+            txtAmount.Name = "txtAmount";
+            txtAmount.PlaceholderText = "";
+            txtAmount.SelectedText = "";
+            txtAmount.ShadowDecoration.CustomizableEdges = customizableEdges19;
+            txtAmount.Size = new Size(347, 42);
+            txtAmount.TabIndex = 12;
+            txtAmount.TextChanged += txtAmount_TextChanged_1;
+            // 
+            // guna2HtmlLabel6
+            // 
+            guna2HtmlLabel6.BackColor = Color.Transparent;
+            guna2HtmlLabel6.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel6.Location = new Point(307, 466);
+            guna2HtmlLabel6.Name = "guna2HtmlLabel6";
+            guna2HtmlLabel6.Size = new Size(93, 33);
+            guna2HtmlLabel6.TabIndex = 13;
+            guna2HtmlLabel6.Text = "Payment";
+            // 
+            // cmbPaymentMethod
+            // 
+            cmbPaymentMethod.BackColor = Color.Transparent;
+            cmbPaymentMethod.CustomizableEdges = customizableEdges20;
+            cmbPaymentMethod.DrawMode = DrawMode.OwnerDrawFixed;
+            cmbPaymentMethod.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbPaymentMethod.FocusedColor = Color.FromArgb(94, 148, 255);
+            cmbPaymentMethod.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cmbPaymentMethod.Font = new Font("Segoe UI", 10F);
+            cmbPaymentMethod.ForeColor = Color.FromArgb(68, 88, 112);
+            cmbPaymentMethod.ItemHeight = 30;
+            cmbPaymentMethod.Location = new Point(310, 505);
+            cmbPaymentMethod.Name = "cmbPaymentMethod";
+            cmbPaymentMethod.ShadowDecoration.CustomizableEdges = customizableEdges21;
+            cmbPaymentMethod.Size = new Size(350, 36);
+            cmbPaymentMethod.TabIndex = 14;
+            cmbPaymentMethod.SelectedIndexChanged += cmbPaymentMethod_SelectedIndexChanged_1;
             // 
             // DonateNowForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1283, 725);
+            Controls.Add(cmbPaymentMethod);
+            Controls.Add(guna2HtmlLabel6);
+            Controls.Add(txtAmount);
             Controls.Add(guna2HtmlLabel5);
             Controls.Add(btndonation);
-            Controls.Add(guna2TextBox1);
             Controls.Add(guna2HtmlLabel4);
             Controls.Add(cmbCampaign);
             Controls.Add(guna2ShadowPanel2);
@@ -509,7 +532,7 @@
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblDonorName;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblDonorEmail;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lbdonorProfile;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblSummaryAmount;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblSummaryCampaign;
@@ -521,8 +544,10 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblSummaryPaymentMethod;
         private Guna.UI2.WinForms.Guna2ComboBox cmbCampaign;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Guna.UI2.WinForms.Guna2Button btndonation;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
+        private Guna.UI2.WinForms.Guna2TextBox txtAmount;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbPaymentMethod;
     }
 }

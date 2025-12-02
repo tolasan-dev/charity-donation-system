@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using charity_system.config;
+using Microsoft.Data.SqlClient;
 
 namespace charity_system.Forms
 {
@@ -20,41 +22,27 @@ namespace charity_system.Forms
         public DonorMainForm()
         {
             InitializeComponent();
+            this.Load += DonorForm_Load;
         }
 
         private void DonorForm_Load(object sender, EventArgs e)
         {
 
-        }
+            if (CurrentUser.DonorID == null)
+                return;
 
-        private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
-        {
+            int donorId = CurrentUser.DonorID.Value;  // Get the logged-in donor's ID
 
-        }
-
-        private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2CustomGradientPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void guna2PictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2ShadowPanel1_Paint(object sender, PaintEventArgs e)
-        {
+            LoadTotalDonation(donorId);
+            LoadDonationCount(donorId);
+            LoadLastDonationDate(donorId);
+            LoadRecentCampaigns();
 
         }
 
         private void guna2ShadowPanel4_Paint(object sender, PaintEventArgs e)
         {
-
+            //LoadTotalDonation();
         }
 
         private void guna2Button6_Click(object sender, EventArgs e)
@@ -122,7 +110,12 @@ namespace charity_system.Forms
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Close();
+
+
+            LoginForm login = new LoginForm();
+            login.Show();
+            Dispose();
+
         }
 
         private void Profile_btn(object sender, EventArgs e)
@@ -135,8 +128,130 @@ namespace charity_system.Forms
         private void MyDonation(object sender, EventArgs e)
         {
             this.Hide();
-            MyDonationsForm myDonationsForm = new MyDonationsForm();    
+            MyDonationsForm myDonationsForm = new MyDonationsForm();
             myDonationsForm.ShowDialog();
+
+        }
+
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+
+
+
+        private void LoadTotalDonation(int donorId)
+        {
+            string sql = @"SELECT ISNULL(SUM(Amount),0)
+                   FROM Donation
+                   WHERE DonorID = @donor AND Status = 'Completed'";
+
+            try
+            {
+                using var conn = new SqlConnection(DBConnection.ConnectionString);
+                using var cmd = new SqlCommand(sql, conn);
+
+                cmd.Parameters.AddWithValue("@donor", donorId);
+
+                conn.Open();
+                decimal total = Convert.ToDecimal(cmd.ExecuteScalar());
+
+                lbTotalDonation.Text = total.ToString("C");  // $1,250.00
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading total donation: " + ex.Message);
+            }
+        }
+
+        private void LoadDonationCount(int donorId)
+        {
+            string sql = @"SELECT COUNT(*)
+                   FROM Donation
+                   WHERE DonorID = @donor";
+
+            try
+            {
+                using var conn = new SqlConnection(DBConnection.ConnectionString);
+                using var cmd = new SqlCommand(sql, conn);
+
+                cmd.Parameters.AddWithValue("@donor", donorId);
+
+                conn.Open();
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                lblNumberOfDonations.Text = count.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading donation count: " + ex.Message);
+            }
+        }
+
+        private void LoadLastDonationDate(int donorId)
+        {
+            string sql = @"SELECT TOP 1 DonationDate
+                   FROM Donation
+                   WHERE DonorID = @donor
+                   ORDER BY DonationDate DESC";
+
+            try
+            {
+                using var conn = new SqlConnection(DBConnection.ConnectionString);
+                using var cmd = new SqlCommand(sql, conn);
+
+                cmd.Parameters.AddWithValue("@donor", donorId);
+
+                conn.Open();
+                object result = cmd.ExecuteScalar();
+
+                if (result != null)
+                    lblLastDonationDate.Text = Convert.ToDateTime(result).ToString("MM/dd/yyyy");
+                else
+                    lblLastDonationDate.Text = "--/--/----";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading last donation date: " + ex.Message);
+            }
+        }
+
+
+        private void LoadRecentCampaigns()
+        {
+            string sql = @"
+        SELECT TOP 3 
+            Title, 
+            CreatedDate
+        FROM Campaign
+        WHERE Status = 'Active'
+        ORDER BY CampaignID DESC";
+
+            try
+            {
+                DataTable dt = new DataTable();
+
+                using var conn = new SqlConnection(DBConnection.ConnectionString);
+                using var cmd = new SqlCommand(sql, conn);
+                using var da = new SqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                dgvRecentCampaigns.DataSource = dt;
+                dgvRecentCampaigns.AutoResizeColumns();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading campaigns: " + ex.Message);
+            }
+        }
+
+        private void btnCLear(object sender, EventArgs e)
+        {
+            dgvRecentCampaigns.DataSource = null;
+            dgvRecentCampaigns.Rows.Clear();
+            dgvRecentCampaigns.Refresh();
 
         }
     }
